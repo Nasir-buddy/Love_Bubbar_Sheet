@@ -8,7 +8,16 @@ public class MergeSorted_array {
     public static void printarr(int arr[]){
         System.out.println(Arrays.toString(arr));
     }
-
+    public static int[] takeinput(){
+        System.out.print("Enter the size of the array : ");
+        int size = sc.nextInt();
+        System.out.println("Enter the element of the array 1 : ");
+        int arr[] = new int[size];
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = sc.nextInt();
+        }
+        return arr;
+    }
     public static int[] mergesortedarr(int arr1[] , int arr2[]){
         int i = 0; 
         int j = 0; 
@@ -30,16 +39,7 @@ public class MergeSorted_array {
         }
         return ans;
     }
-    public static int[] takeinput(){
-        System.out.print("Enter the size of the array : ");
-        int size = sc.nextInt();
-        System.out.println("Enter the element of the array 1 : ");
-        int arr[] = new int[size];
-        for(int i = 0; i < arr.length; i++){
-            arr[i] = sc.nextInt();
-        }
-        return arr;
-    }
+ 
     public static void main(String[] args) {
         int arr1[] = takeinput();
         int arr2[] = takeinput();
