@@ -11,19 +11,12 @@ public class Move_all_negative_oneside {
     }
     public static int moveNegative(int arr[]){
         int i = 0; 
-        int j = arr.length - 1;
-        while(i < j){
-            if(arr[i] < 0 && arr[i] > 0){
+        int j = arr.length - 1; 
+        while(i <= j){
+            if(arr[i] < 0){
                 i++;
-                j--;
-            } else if (arr[i] > 0 && arr[j] < 0){
-                swap(arr , i , j);
-                i++;
-                j--;
-            } else if (arr[i] > 0 && arr[j] > 0){
-                j--;
-            } else if (arr[i] < 0 && arr[j] < 0){
-                i++;
+            } else {
+                swap(arr, i, j--);
             }
         }
         return 0;
