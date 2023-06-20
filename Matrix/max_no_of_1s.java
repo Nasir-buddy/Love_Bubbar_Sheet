@@ -72,8 +72,9 @@ public class max_no_of_1s {
         return ans; 
     }
     // third approach n^2 TC
-    public static int[] leetcodeapproach(int mat[][] , int row){
+    public static int leetcodeapproach(int mat[][] , int row){
         int maxcount = 0; 
+
         for(int i = 0; i < mat.length; i++){
             int count = 0; 
             for(int j = 0; j < mat[0].length; j++){
@@ -86,7 +87,7 @@ public class max_no_of_1s {
                 row = i;
             }
         }
-        return new int[] {row , maxcount};
+        return row;
     }
     public static void main(String[] args) {
         int arr[][] = takeInput();
