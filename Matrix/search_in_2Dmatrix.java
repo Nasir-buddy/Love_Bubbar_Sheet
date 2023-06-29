@@ -1,6 +1,5 @@
 package Matrix;
-
-import java.lang.annotation.Target;
+    
 import java.util.Scanner;
 
 public class search_in_2Dmatrix {
@@ -15,7 +14,7 @@ public class search_in_2Dmatrix {
     }
     public static int binariSearchRow(int matrix[][] , int target){
         int low = 0; 
-        int high = 0;
+        int high = matrix.length;
         // lc = last column
         int lc = matrix[0].length - 1;
         while(low <= high){
