@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class Permutation {
     public static boolean permutation_check(String s1 , String s2){
+        if(s1.length() != s2.length()){
+            return false;
+        }
+        
         int n1 = s1.length();
         int n2 = s2.length();
 
