@@ -4,24 +4,26 @@ import java.util.*;
 
 public class generate_pranthesis {
     public static void AllParenthesis(int n) {
-        helper("", n, 0, 0, 0);
+        List<String> ans = new ArrayList<>();
+        helper(ans,"", n, 0, 0, 0);
+        System.out.println(ans);
     }
 
-    public static void helper(String current, int n, int i, int open, int close) {
+    public static void helper(List<String> ans, String current, int n, int i, int open, int close) {
         if (i == 2 * n) {
-            System.out.println(current);
+            ans.add(current);
             return;
         }
 
         if (open < n) {
             current = current + "(";
-            helper(current, n, i + 1, open + 1, close);
+            helper(ans ,current, n, i + 1, open + 1, close);
             current = current.substring(0, current.length() - 1);
         }
 
         if (close < open) {
             current = current + ")";
-            helper(current, n, i + 1, open, close + 1);
+            helper(ans ,current, n, i + 1, open, close + 1);
         }
     }
 
