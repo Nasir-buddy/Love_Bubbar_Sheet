@@ -10,15 +10,18 @@ public class Generate_Brackets {
         return ans;
     }
     public static void helpergenerate(List<String> ans, String current, int n, int i, int open , int close){
+        //base case
             if(i == 2 * n){
                 ans.add(current);
                 return;
             }
+            // 1st logic
             if(open < n){
                 current = current + '(';
                 helpergenerate(ans, current, n, i + 1, open + 1, close);
                 current = current.substring(0 , current.length() - 1);
             }
+            // 2nd logic
             if(close < open){
                 current = current + ')';
                 helpergenerate(ans, current, n, i + 1, open, close + 1);
@@ -27,12 +30,6 @@ public class Generate_Brackets {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        // List<String> pass = new ArrayList<>(n);
-        // for(int i = 0; i < n; i++){
-        //     String put = sc.next();
-        //     pass.add(put);
-        // }
-        // System.out.println(pass);
         List<String> ans = new ArrayList<>(generateBrackets(n)); 
         System.out.println(ans);
     }
