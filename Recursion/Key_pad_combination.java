@@ -1,10 +1,30 @@
 package Recursion;
-import java.util.Scanner;
-import java.util.ArrayList;
-
+import java.util.*;
 public class Key_pad_combination {
-    static String codes[] = {".;" , "abc" , "def" , "ghi" , "jkl" , "mno" , "pqrs" , "tu" , "vwx" , "yz" };
-    public static ArrayList<String> getKPC(String str){
+    static String codes[] = {
+      ".;" 
+    , "abc" 
+    , "def" 
+    , "ghi" 
+    , "jkl" 
+    , "mno" 
+    , "pqrs" 
+    , "tu" 
+    , "vwx" 
+    , "yz" };
+    public static List<String> getKPC(String str){
+        // below is the edge case for empty case on leetcode
+        if(str.length() == 0){
+            List<String> nulllist = new ArrayList<>();
+            return nulllist;
+        } else {
+            // short form
+            // return helper(str);
+            List<String> ans = new ArrayList<>(helper(str));
+            return ans;
+        }
+    }
+    public static List<String> helper(String str){
         if(str.length() == 0){
             ArrayList<String> emptyStr = new ArrayList<>();
             emptyStr.add("");
@@ -13,8 +33,8 @@ public class Key_pad_combination {
         char ch = str.charAt(0); // saving the first index word of the string.
         String ros = str.substring(1); // ROS = Rest of the string.
         
-        ArrayList<String> reres = getKPC(ros); // Calling recursion 
-        ArrayList<String> myans = new ArrayList<>(); // creatin new array list answer 
+        List<String> reres = helper(ros); // Calling recursion 
+        List<String> myans = new ArrayList<>(); // creatin new array list answer 
 
         String codeforch = codes[ch - '0']; // finding the length of the char by subtracting 
         for(int i = 0; i < codeforch.length(); i++){ // running on the first character which we stored previously
@@ -28,7 +48,7 @@ public class Key_pad_combination {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-        ArrayList<String> ans = getKPC(str);
+       List<String> ans = new ArrayList<>(getKPC(str));
         System.out.println(ans); 
     }
 }
