@@ -28,21 +28,25 @@ public class Rat_in_a_maze {
             System.out.println(path);
             return;
         }
+        // down
         if(isValid(mat, visited, i + 1, j, n, m)){
             visited[i][j] = true;
             ratInMaze(mat, visited, i + 1, j, path + 'D', n, m);
             visited[i][j] = false;
         }
+        // left
         if(isValid(mat, visited, i, j - 1, n, m)){
             visited[i][j] = true;
             ratInMaze(mat, visited, i, j - 1, path + 'L', n, m);
             visited[i][j] = false;
          }
+        //  right
          if(isValid(mat, visited, i, j + 1, n, m)){
             visited[i][j] = true;
             ratInMaze(mat, visited, i, j + 1, path + 'R', n, m);
             visited[i][j] = false;
          }
+        //  up
          if(isValid(mat, visited, i - 1, j, n, m)){
             visited[i][j] = true;
             ratInMaze(mat, visited, i - 1, j, path + 'U', n, m);    
