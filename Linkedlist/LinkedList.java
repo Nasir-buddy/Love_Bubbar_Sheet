@@ -28,7 +28,7 @@ public class LinkedList{
 
         // printLL(head);
         head = insertLL(3, 9, head);
-        head = deleteLL(0, head);
+        // head = deleteLL(0, head);
         printLL(head);
     }
     public static void printLL(Node<Integer> head){
@@ -51,10 +51,11 @@ public class LinkedList{
             temp = temp.next;
         }
         newNode.next = temp.next;
-        temp.previous = newNode;
+        temp.next.previous = newNode;
 
         temp.next = newNode;
         newNode.previous = temp;
+
         return head;
     }
 
